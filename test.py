@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
+import sys
+sys.setrecursionlimit(15000)
+
 from tailspin import tailspin
 from ltailspin import ltailspin
 from ctailspin import ctailspin
-from trampolined import trampolined
+from cltailspin import cltailspin
 
 def test(tail):
     
@@ -47,16 +50,17 @@ def ftime(tail,n):
 
     import timeit
     return timeit.Timer('factorial(%d)'%n,
-                        "from __main__ import factorial").timeit(1000)
+                        "from __main__ import factorial").timeit(100)
 
 if __name__ == '__main__':
     test(tailspin)
+    test(ltailspin)
     test(ctailspin)
-    test(trampolined)
+    test(cltailspin)
     test(lambda f:f)
-    for n in xrange(100,1000,100):
+    for n in xrange(100,3000,500):
         base = ftime(lambda f:f,n)
         print "tailspin",n,ftime(tailspin,n)/base
         print "ltailspin",n,ftime(ltailspin,n)/base
         print "ctailspin",n,ftime(ctailspin,n)/base
-        print "trampolined",n,ftime(trampolined,n)/base
+        print "cltailspin",n,ftime(cltailspin,n)/base
