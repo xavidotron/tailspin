@@ -1,0 +1,8 @@
+This is a collection of different decorators that implement tail-recursion
+in Python.  You probably want to use ctailspin, since it's faster,
+though in general you only want to use these at all if you're having
+memory or recursion depth issues, because it takes a lot of recursion
+for even ctailspin to be faster than normal recursion.
+
+While I came up with the main idea independently, I did later benefit from
+crux's decorator at http://lambda-the-ultimate.org/node/1331#comment-15165.
