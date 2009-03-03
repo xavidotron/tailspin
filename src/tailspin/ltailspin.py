@@ -1,5 +1,7 @@
 import threading, sys
 from time import time
+import pkg_resources
+pkg_resources.require('lazypy')
 from LazyEvaluation.Promises import PromiseMetaClass
 
 # See: http://freshmeat.net/projects/lazypy/
