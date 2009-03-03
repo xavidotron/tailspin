@@ -3,10 +3,10 @@
 import sys
 sys.setrecursionlimit(15000)
 
-from tailspin.tailspin import tailspin
-from tailspin.ltailspin import ltailspin
-from tailspin.ctailspin import ctailspin
-from tailspin.cltailspin import cltailspin
+from tailspin.plain import tail as tailspin
+from tailspin.lazy import tail as ltailspin
+from tailspin.fast import tail as ctailspin
+from tailspin.fastlazy import tail as cltailspin
 
 def test(tail):
     

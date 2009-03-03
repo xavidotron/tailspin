@@ -1,6 +1,6 @@
 import threading
 
-cdef force(o):
+cpdef force(o):
     if isinstance(o,tailfish):
         return (<tailfish>o).__force__()
     else:

@@ -1,10 +1,9 @@
-from .cltailspin_h import helper
+from .fastlazy_h import helper,force
 
-def cltailspin(func):
+def tail(func):
     func.recur = False
     def help(*args,**kw):
         return helper(func,args,kw)
     return help
 
-def force(thing):
-    thing.__force__()
+__all__ = ['tail','force']

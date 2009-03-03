@@ -1,5 +1,11 @@
 import threading
 
+def force(o):
+    if isinstance(o,tailfish):
+        return (<tailfish>o).force()
+    else:
+        return o
+
 cdef class tailfish:
     cdef object func
     cdef object args

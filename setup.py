@@ -14,8 +14,8 @@ setup(name='TailSpin',
       packages=['tailspin'],
       requires=['Cython'],
       cmdclass = {'build_ext': build_ext},
-      ext_modules = [Extension("tailspin.ctailspin_h",
-                               ["src/tailspin/ctailspin_h.pyx"]),
-                     Extension("tailspin.cltailspin_h",
-                               ["src/tailspin/cltailspin_h.pyx"])]
+      ext_modules = [Extension("tailspin.fast_h",
+                               ["src/tailspin/fast_h.pyx"]),
+                     Extension("tailspin.fastlazy_h",
+                               ["src/tailspin/fastlazy_h.pyx"])]
       )

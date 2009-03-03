@@ -1,7 +1,9 @@
-from .ctailspin_h import helper
+from .fast_h import helper,force
 
-def ctailspin(func):
+def tail(func):
     func.recur = False
     def help(*args,**kw):
         return helper(func,args,kw)
     return help
+
+__all__ = ['tail','force']

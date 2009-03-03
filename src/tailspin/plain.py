@@ -9,7 +9,7 @@ class tailfish(object):
     def __force__(self):
         return self.func(*self.args,**self.kw)
 
-def tailspin(func):
+def tail(func):
     func._tail_state = threading.local()
     def helper(*args,**kw):
         if not hasattr(func._tail_state,'recur'):
@@ -32,3 +32,4 @@ def tailspin(func):
 
 # See also: http://code.activestate.com/recipes/496691/
 
+__all__ = ['tail']
